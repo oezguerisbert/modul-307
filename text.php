@@ -3,6 +3,7 @@
 
     </head>
     <body>
+        <h1>Ich bin eine Überschrift</h1>
         <?php
          echo "Eins: " . $_POST["eins"] . "<br />";
          echo "Zwei: " . $_POST["zwei"] . "<br />";
