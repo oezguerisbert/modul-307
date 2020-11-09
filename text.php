@@ -5,10 +5,10 @@
     <body>
         <h1>Ich bin eine Überschrift</h1>
         <?php
-         echo "Eins: " . $_POST["eins"] . "<br />";
-         echo "Zwei: " . $_POST["zwei"] . "<br />";
-         echo "Drei: " . $_POST["drei"] . "<br />";
-         echo "Vier: " . $_POST["vier"] . "<br />";
+         echo "Eins: " . $_GET["eins"] . "<br />";
+         echo "Zwei: " . $_GET["zwei"] . "<br />";
+         echo "Drei: " . $_GET["drei"] . "<br />";
+         echo "Vier: " . $_GET["vier"] . "<br />";
         ?>
     </body>
 </html>
