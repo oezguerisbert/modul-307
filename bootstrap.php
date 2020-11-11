@@ -13,21 +13,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="container">
+    
+    <div class="container" style="padding-top:2rem;padding-bottom:2rem;">
         <form method="POST" action="formular.php">
             <div class="form-group row">
-                <label for="email" class="col-sm-2">Email address</label>
+                <label for="firstname" class="col-sm-2">Firstname</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="firstname" id="firstname">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="password" class="col-sm-2">Password</label>
+                <label for="lastname" class="col-sm-2">Lastname</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password">
+                    <input type="text" class="form-control" name="lastname" id="lastname">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="street" class="col-sm-2">Street</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="street" id="street">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="plz">Postleitzahl</label>
+                    <input type="number" min="1000" max="9999" class="form-control" name="plz" id="plz">
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="ort" >Ort</label>
+                    <input type="text" class="form-control" name="ort" id="ort">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
         </form>
     </div>
   </body>
