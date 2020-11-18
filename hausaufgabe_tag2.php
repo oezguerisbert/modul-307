@@ -76,11 +76,11 @@
             </div>
             <h5>Veganer?</h5>
             <div class="custom-control custom-radio">
-                <input type="radio" id="veganyes" name="veganyes" class="custom-control-input">
+                <input type="radio" id="veganyes" name="vegan" class="custom-control-input">
                 <label class="custom-control-label" for="veganyes">Ja</label>
             </div>
             <div class="custom-control custom-radio">
-                <input type="radio" id="veganno" name="veganno" class="custom-control-input">
+                <input type="radio" id="veganno" name="vegan" class="custom-control-input">
                 <label class="custom-control-label" for="veganno">Nein</label>
             </div>
             <h5>Später Ansehen?</h5>
