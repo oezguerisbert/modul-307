@@ -24,14 +24,6 @@
             $stmt = $conn->prepare($sql);
             return $stmt;
         }
-        private static function stmtWithValues(string $sql,array $values){
-            $conn = DB::connection();
-            $stmt = $conn->prepare($sql);
-            foreach ($values as $key => $value) {
-                $stmt->bindParam(":".$key, $value);
-            }
-            return $stmt;
-        }
 
         private static function insert(string $sql, array $array){
             return DB::stmt($sql)->execute($array);

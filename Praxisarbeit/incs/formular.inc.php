@@ -62,7 +62,8 @@ include './incs/bootstrap.head.inc.php';
                             echo createInput("nachname",!isset($nname) ? "" : trim($nname), "text", null, true);
                             echo createInput("email", !isset($email) ? "" : trim($email), "email", "Ihr E-Mail wird nach dem Service entfernt.", true);
                             echo createInput("phone", !isset($phone) ? "" : trim($phone), "phone", "Ihr Telefon wird nach dem Service entfernt.", true);
-                            echo createPriorities(array("Tief", "Standart", "Express"));
+                            echo "<h4>Wählen sie eine Priorität aus</h4>";
+                            echo createPriorities(array("Tief", "Standart", "Express"), isset($prio) ? $prio : "");
                         ?>
                         <br />
                         <button class="btn btn-primary" type="submit">Senden</button>
