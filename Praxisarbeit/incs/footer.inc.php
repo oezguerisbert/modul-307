@@ -14,10 +14,10 @@
         <h5 class="text-uppercase">Socials</h5>
         <ul class="list-unstyled">
           <li>
-            <a href="#!">Maps</a>
+            <a href="#!">🐤Twitter</a>
           </li>
           <li>
-            <a href="#!">Facebook</a>
+            <a href="#!">💻Facebook</a>
           </li>
         </ul>
       </div>
