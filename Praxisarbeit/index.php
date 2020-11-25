@@ -18,7 +18,7 @@
 <body>
     <div class="container">
         <div class="col pt-4 pb-4">
-        <h1>KXI-Service</h1>
+        <h1>KXI</h1>
             <h2>
                 Dein Ski-Service in den Alpen 😊⛷
             </h2>
