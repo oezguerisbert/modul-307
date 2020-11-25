@@ -42,8 +42,7 @@ include './incs/bootstrap.head.inc.php';
     <div class="container">
         <div class="col pt-4 pb-4">
             <div class="row">
-                <div class="col">
-                </div>
+                <div class="col"></div>
                 <div class="col-8">
                 <h1>
                     Service-Formular
@@ -60,8 +59,8 @@ include './incs/bootstrap.head.inc.php';
                 <div id="infos">
                     <?php 
                     if(isset($db_query_result) && sizeof($errors) === 0){
-                        echo createAlert($db_query_result, "Danke!", array("Super, wir werden Sie am ".(date("d.m.Y", strtotime("+".getPrioDays($prio)." days")))." (in ".getPrioDays($prio)." Tagen) kontaktieren."));
-                        echo "<a href=\"javascript:history.back()\">zurück</a>";
+                        echo createAlert($db_query_result, "✨ Perfekt!", array("Wir werden Sie am ".(date("d.m.Y", strtotime("+".getPrioDays($prio)." days")))." (in ".getPrioDays($prio)." Tagen) kontaktieren."));
+                        echo "<a class=\"btn btn-secondary\" href=\"javascript:history.back()\">zurück</a>";
                     }else if(isset($errors) && sizeof($errors) > 0){
                         echo createAlert("warning", "Opps!", $errors);
                     }
@@ -71,6 +70,7 @@ include './incs/bootstrap.head.inc.php';
                     ?>
                     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                         <?php
+                            echo "<h4>Ihre Persönliche Daten</h4>";
                             echo createInput("vorname", !isset($vname) ? "" : trim($vname), "text", null, true);
                             echo createInput("nachname",!isset($nname) ? "" : trim($nname), "text", null, true);
                             echo createInput("email", !isset($email) ? "" : trim($email), "email", "Ihr E-Mail wird nach dem Service entfernt.", true);
@@ -79,14 +79,20 @@ include './incs/bootstrap.head.inc.php';
                             echo createPriorities(array("Tief", "Standart", "Express"), isset($prio) ? $prio : "");
                         ?>
                         <br />
-                        <button class="btn btn-primary" type="submit">Senden</button>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <a class="btn btn-secondary" href="javascript:history.back()">zurück</a>
+                            </div>
+                            <div class="col-lg-2">
+                                <button class="btn btn-primary align-self-end" type="submit">Senden</button>
+                            </div>
+                        </div>
                     </form>
                 <?php
                 }
                 ?>
                 </div>
-                <div class="col">
-                </div>
+                <div class="col"></div>
             </div>
         </div>
     </div>
