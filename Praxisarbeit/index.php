@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ski-Service</title>
+    <title>KXI-Service</title>
     <?php
         include './incs/bootstrap.head.inc.php';
     ?>
@@ -18,9 +18,9 @@
 <body>
     <div class="container">
         <div class="col pt-4 pb-4">
-        <h1>Ski-Service</h1>
+        <h1>KXI-Service</h1>
             <h2>
-                Dein Ski-Service in den Alpen 😊
+                Dein Ski-Service in den Alpen 😊⛷
             </h2>
             <img src="<?php echo $background; ?>" class="col p-0 br-2 rounded" />
             <h3 class="pt-4">

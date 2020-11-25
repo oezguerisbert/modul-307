@@ -2,7 +2,7 @@
   <div class="container-fluid text-center text-md-left">
     <div class="row">
       <div class="col-md-6 mt-md-0 mt-3">
-        <h5 class="text-uppercase">sxi</h5>
+        <h5 class="text-uppercase">kxi</h5>
         <p>Der einzig wahre Service</p>
       </div>
 

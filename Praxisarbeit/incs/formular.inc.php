@@ -32,7 +32,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ski-Service</title>
+    <title>kxi-Service</title>
     <?php
 include './incs/bootstrap.head.inc.php';
 ?>
@@ -49,6 +49,7 @@ include './incs/bootstrap.head.inc.php';
                     <?php 
                     if(isset($db_query_result) && sizeof($errors) === 0){
                         echo createAlert($db_query_result, "Danke!", array("Super, wir werden Sie bald kontaktieren."));
+                        echo "<a href=\"javascript:history.back()\">zurück</a>";
                     }else if(isset($errors) && sizeof($errors) > 0){
                         echo createAlert("warning", "Opps!", $errors);
                     }
