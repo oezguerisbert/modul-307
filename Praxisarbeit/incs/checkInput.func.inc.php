@@ -1,9 +1,10 @@
 <?php
     function checkInput(array $array){
-        $d = true;
+        $errors = array();
         foreach ($array as $key => $value) {
-            $d &= !empty($value);
+            if(empty(trim($value)))
+            $errors[] = "Sie müssen '".ucfirst($key)."' richtig ausfüllen";
         }
-        return $d;
+        return $errors;
     }
 ?>

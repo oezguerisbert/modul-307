@@ -11,18 +11,18 @@
         $phone = $_POST['phone'];
         $email = $_POST['email'];
         $prio = $_POST['prio'];
-        if(checkInput(array($vname, $nname, $phone, $prio))){
+        $errors = checkInput(array("vorname" => $vname,"nachname" => $nname,"phone" => $phone,"priority" => $prio, "email" => $email));
+        if(sizeof($errors) === 0){
             $db_result = DB::addService(array(
                 "vorname" => $vname,
                 "nachname" => $nname,
                 "email" => $email,
                 "phone" => $phone,
-                "service" => $service, 
+                "service" => strtolower($service), 
                 "priority" => $prio
                 )
             );
             $db_query_result = $db_result ? "success" : "warning";
-            
         }
     }
 ?>
@@ -46,19 +46,22 @@ include './incs/bootstrap.head.inc.php';
                 <div class="col-8">
                 <h1>Service-Formular <span class="badge badge-primary"><?php echo $service;?></span></h1>
                 <div id="infos">
-                    <?php echo !isset($db_query_result) ? "" : createAlert($db_query_result, "Danke!", array(
-                                "Super, wir werden Sie bald kontaktieren."
-                            ),
-                        );?>
+                    <?php 
+                    if(isset($db_query_result) && sizeof($errors) === 0){
+                        echo createAlert($db_query_result, "Danke!", array("Super, wir werden Sie bald kontaktieren."));
+                    }else if(isset($errors) && sizeof($errors) > 0){
+                        echo createAlert("warning", "Opps!", $errors);
+                    }
+                    ?>
                 </div>
-                <?php if(!isset($db_query_result)){
+                <?php if(!isset($db_query_result) || sizeof($errors) > 0){
                     ?>
                     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                         <?php
-                            echo createInput("vorname", "text", null, true);
-                            echo createInput("nachname", "text", null, true);
-                            echo createInput("email", "email", "Ihr E-Mail wird nach dem Service entfernt.", true);
-                            echo createInput("phone", "phone", "Ihr Telefon wird nach dem Service entfernt.", true);
+                            echo createInput("vorname", !isset($vname) ? "" : trim($vname), "text", null, true);
+                            echo createInput("nachname",!isset($nname) ? "" : trim($nname), "text", null, true);
+                            echo createInput("email", !isset($email) ? "" : trim($email), "email", "Ihr E-Mail wird nach dem Service entfernt.", true);
+                            echo createInput("phone", !isset($phone) ? "" : trim($phone), "phone", "Ihr Telefon wird nach dem Service entfernt.", true);
                             echo createPriorities(array("Tief", "Standart", "Express"));
                         ?>
                         <br />
