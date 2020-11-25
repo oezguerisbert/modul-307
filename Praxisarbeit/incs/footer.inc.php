@@ -1,38 +1,36 @@
-<footer class="page-footer font-small blue pt-4">
+<footer class="page-footer font-small blue pt-4 rounded mb-4">
   <div class="container-fluid text-center text-md-left">
     <div class="row">
       <div class="col-md-6 mt-md-0 mt-3">
         <h5 class="text-uppercase">kxi</h5>
-        <p>Der einzig wahre Service</p>
+        <ul class="list-unstyled">
+          <li>Baslerstrasse 420</li>
+          <li>4052 Basel</li>
+          <li>Schweiz</li>
+        </ul>
       </div>
-
       <hr class="clearfix w-100 d-md-none pb-3">
       <div class="col-md-3 mb-md-0 mb-3">
-        <h5 class="text-uppercase">Links</h5>
+        <h5 class="text-uppercase">Socials</h5>
         <ul class="list-unstyled">
           <li>
-            <a href="#!">Test 1</a>
+            <a href="#!">Maps</a>
           </li>
           <li>
-            <a href="#!">Test 2</a>
+            <a href="#!">Facebook</a>
           </li>
         </ul>
       </div>
       <div class="col-md-3 mb-md-0 mb-3">
-        <h5 class="text-uppercase">Links</h5>
+        <h5 class="text-uppercase">Kontakt</h5>
         <ul class="list-unstyled">
           <li>
-            <a href="#!">Link 1</a>
+            <a href="#!">🗺 Google Maps</a>
           </li>
           <li>
-            <a href="#!">Link 2</a>
+            <a href="#!">⛷ SkiRegister</a>
           </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
+          <li>📞 +41 1234 56 78</li>
         </ul>
       </div>
     </div>
