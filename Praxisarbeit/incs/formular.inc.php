@@ -3,6 +3,7 @@
     include './incs/createPriorities.func.inc.php';
     include './incs/createAlert.func.inc.php';
     include './incs/checkInput.func.inc.php';
+    include './incs/getPrioDays.func.inc.php';
     include './incs/DB.class.inc.php';
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -44,11 +45,22 @@ include './incs/bootstrap.head.inc.php';
                 <div class="col">
                 </div>
                 <div class="col-8">
-                <h1>Service-Formular <span class="badge badge-primary"><?php echo $service;?></span></h1>
+                <h1>
+                    Service-Formular
+                    <span class="badge badge-primary"><?php echo $service;?></span>
+                    <?php
+                        if(isset($prio)){
+                            ?>
+                            <span class="badge badge-secondary"><?php echo $prio;?></span>
+                            <?php
+                        }
+                        
+                    ?>
+                </h1>
                 <div id="infos">
                     <?php 
                     if(isset($db_query_result) && sizeof($errors) === 0){
-                        echo createAlert($db_query_result, "Danke!", array("Super, wir werden Sie bald kontaktieren."));
+                        echo createAlert($db_query_result, "Danke!", array("Super, wir werden Sie am ".(date("d.m.Y", strtotime("+".getPrioDays($prio)." days")))." (in ".getPrioDays($prio)." Tagen) kontaktieren."));
                         echo "<a href=\"javascript:history.back()\">zurück</a>";
                     }else if(isset($errors) && sizeof($errors) > 0){
                         echo createAlert("warning", "Opps!", $errors);
