@@ -22,6 +22,7 @@
             <h2>
                 Dein Ski-Service in den Alpen 😊⛷
             </h2>
+            <br />
             <img src="<?php echo $background; ?>" class="col p-0 br-2 rounded" />
             <h3 class="pt-4">
                 Über uns
